@@ -2,25 +2,25 @@ package com.evan.wj.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.evan.wj.dao.CategoryDAO;
 import com.evan.wj.pojo.Category;
 
 @Service
 public class CategoryService {
-    @Autowired
-    CategoryDAO categoryDAO;
+//    @Autowired
+//    CategoryDAO categoryDAO;
 
     public List<Category> list() {
         Sort sort = new Sort(Sort.Direction.DESC, "id");
-        return categoryDAO.findAll(sort);
+        return null;
+//        return categoryDAO.findAll(sort);
     }
 
     public Category get(int id) {
-        Category c= categoryDAO.findById(id).orElse(null);
+//        Category c= categoryDAO.findById(id).orElse(null);
+        Category c= new Category();
         return c;
     }
 }

@@ -44,7 +44,26 @@ CREATE TABLE book (
 http://localhost:8080/#/login
 http://localhost:8080/index
 ■SpringBoot■サーバポート8443、application.propertiesに設定する
-http://localhost:8443/api/login
+http://localhost:8444/api/login
+swagger
+http://localhost:8444/swagger-ui.html#/
 ■
 ■
 
+#PostGreSql
+CREATE TABLE public.tb_user
+(
+  id serial NOT NULL,
+  username character varying(255) DEFAULT NULL,
+  password character varying(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+) tablespace pg_default;
+
+INSERT INTO tb_user VALUES (1, 'admin', '123');
+
+
+CREATE TABLE category (
+  id int NOT NULL,
+  name character varying(255) NOT NULL,
+  PRIMARY KEY (id)
+) tablespace pg_default;

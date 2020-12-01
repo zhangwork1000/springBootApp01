@@ -1,43 +1,44 @@
 package com.evan.wj.pojo;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "tbUser")
-@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+//@Entity
+//@Table(name = "tbUser")
+//@JsonIgnoreProperties({ "handler", "hibernateLazyInitializer" })
 
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    int id;
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Column(name = "id")
+	int id;
 
-    String username;
-    String password;
+	String username;
+	String password;
 
-    public int getId() {
-        return id;
-    }
+	public User(int id, String userName) {
+		setId(id);
+		setUsername(userName);
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }
